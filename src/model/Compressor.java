@@ -41,9 +41,13 @@ public class Compressor implements IFile, IMatriz, IColor{
         return this;
     }
     
-    public IColor SetNumberOfDiffColors(int numberColors){
-        if(numberColors <= 5){
-            this.numberColors = numberColors;
+    public IColor SetNumberOfDiffColors(int numberColors){   
+        if(numberColors <= 5 ){
+            if(numberColors <= 0){
+               this.numberColors = 1;
+            }else{
+                this.numberColors = numberColors;
+            }
         }else{
             this.numberColors = 5;
         }
